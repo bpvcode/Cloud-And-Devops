@@ -8,7 +8,7 @@ Hope you Like
 
 ## Index
 
-[Live study sessions](./lives)
+[Live study sessions](./live-study-sessions)
 
 
 [Training material](./training-material)
