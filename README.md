@@ -1,8 +1,8 @@
 # Cloud And Devops
 
-Hello everyone,
+Hello everyone, 👋
 
-This is my study Cloud and Devops material
+This is my Cloud and Devops study material
 
 Hope you Like
 
