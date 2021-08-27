@@ -1,0 +1,40 @@
+#!/bin/env bash
+
+
+sudo echo " minikube start script"
+
+if [ $(minikube status | grep -i -wc Running) -eq 3 ] ; then
+  echo "Started minikube."
+else
+  echo "Starting minikube"
+
+mkdir $HOME/minikube-data/pg-data -p
+sudo chmod 777 -R $HOME/minikube-data
+
+minikube start \
+    -p minikube \
+    --nodes 1 \
+    --cache-images true \
+    --delete-on-failure \
+    --driver=docker \
+    --memory=4000 \
+    --cpus=4 \
+    --disk-size=10g \
+    --container-runtime=docker \
+    --mount --mount-string=$HOME/minikube-data/pg-data:/mnt/data
+    #    --kubernetes-version=v1.20.2 \
+    #    --network-plugin=auto
+
+
+  minikube addons enable metrics-server
+  minikube addons enable dashboard
+  minikube addons enable ingress
+
+fi
+
+
+if [ $(grep 'minikube.local' /etc/hosts -c) -eq 0 ]; then
+  sudo -- sh -c -e "echo '$(minikube ip)\tminikube.local' >>/etc/hosts"
+else
+  sudo -- sh -c -e "sed -i -e 's/.*minikube.*/'$(minikube ip)'\tminikube.local/' /etc/hosts"
+fi

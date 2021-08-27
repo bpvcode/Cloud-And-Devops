@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+# Setup minikube and tools
+
+if command -v minikube &> /dev/null
+then
+    echo "minikube found"
+    exit
+fi
+
+echo "Installing minikube..."
+FILE=./minikube
+curl -Lo $FILE https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install $FILE /usr/local/bin/
+rm $FILE
+
+
+echo "Installing Skaffold..."
+FILE=./skaffold
+curl -Lo $FILE https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
+sudo install $FILE /usr/local/bin/
+rm $FILE
+
+
+curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install ./kubectl /usr/local/bin/
+rm ./kubectl
+
+kubectl version --client
+
+
+echo "Installing kustomize..."
+curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+sudo install ./kustomize /usr/local/bin/
+rm ./kustomize
+
+
+# kubectx
+curl "https://raw.githubusercontent.com/ahmetb/kubectx/master/completion/kubectx.zsh" --create-dirs -o ~/.oh-my-zsh/completions/_kubectx.zsh
+curl "https://raw.githubusercontent.com/ahmetb/kubectx/master/completion/kubens.zsh" --create-dirs -o ~/.oh-my-zsh/completions/_kubens.zsh
+sudo chmod -R 755 ~/.oh-my-zsh/completions
+
+
+# k9s
+wget https://github.com/derailed/k9s/releases/download/v0.22.1/k9s_Linux_x86_64.tar.gz
+tar -xzf k9s_*.tar.gz
+sudo install ./k9s /usr/local/bin/
+rm k9s_*.tar.gz
+rm ./k9s
+
+
+sudo -- sh -c -e "echo '127.0.0.1\tminikube.local' >>/etc/hosts"
