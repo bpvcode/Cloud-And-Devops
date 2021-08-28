@@ -16,6 +16,7 @@ docker container run <image_NAME>:<tag>
 ```
 
 Comando para executar um container a partir de uma imagem.
+
 Workflow:
     1º Docker verifica se a imagem já está em cache na máquina local
         * Se sim, usa a cache para ler a imagem;
@@ -61,10 +62,10 @@ Entrar num container que esteja em execução e habilitar um terminal
 docker container run -d -p 8080:80 nginx:latest
 ```
 
-Exemplo:
-
-    `-p 8080:80` -> Linka o porto 80 do container, ao porto 8080 da máquina local
-    Podemos então aceder ao container através de `http://localhost:8080` e vamos ter acesso à pagina do nginx
+> Exemplo:
+>
+>`-p 8080:80` -> Linka o porto 80 do container, ao porto 8080 da máquina local
+>                Podemos então aceder ao container através de `http://localhost:8080` e vamos ter acesso à pagina do nginx
 
 
 
