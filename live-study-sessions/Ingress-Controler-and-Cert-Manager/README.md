@@ -11,7 +11,8 @@ cert-manager
 >https://cert-manager.io/docs/
 
 Gestor de certificados
-    * Issuers - Serviço que gera o certificado
-      * Issuers - especifico para um namespace
-      * Cluster Issuer - para todos os namespaces
-    * Certificates -
+
+ * Issuers - Serviço que gera o certificado
+   * Issuers - especifico para um namespace
+   * Cluster Issuer - para todos os namespaces
+ * Certificates
