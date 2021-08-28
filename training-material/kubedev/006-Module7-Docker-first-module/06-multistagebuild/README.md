@@ -3,7 +3,7 @@
 ## Multistage Build
 
 Bom para otimizar as imagens docker, principalmente se a aplicação for [compilada](./app-go-example).
-Objectivo é
+Objectivo é dividir os passos de criação da aplicação (Stage build, Stage de testes, Stage de execução, ...)
 
 **[Mau Exemplo](./app-go-example/Dockerfile)**
 
