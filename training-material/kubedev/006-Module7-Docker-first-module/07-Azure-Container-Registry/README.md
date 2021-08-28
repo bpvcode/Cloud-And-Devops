@@ -51,21 +51,20 @@ docker push bpvcode.azurecr.io/app-go-example:latest
 
 3º - Check if the image is in Azure repository:
 
-Portal Azure -> `Menu Button > All services > Container registries`
+**Namespaces:**
 
-Namespaces:
+Portal Azure -> `Menu Button > All services > Container registries`
 
 ![namespaces](./azure-containers-registry-1.png)
 
+**Repositories:**
 
 Portal Azure -> `Menu Button > All services > Container registries > bpvcode > Repositories `
 
-Repositories:
-
 ![repositories](./azure-containers-registry-2.png)
 
-Portal Azure -> `Menu Button > All services > Container registries > bpvcode > Repositóries > app-example `
+**Images and versions inside the repo:**
 
-Images and versions inside the repo:
+Portal Azure -> `Menu Button > All services > Container registries > bpvcode > Repositóries > app-example `
 
 ![images](./azure-containers-registry-3.png)
