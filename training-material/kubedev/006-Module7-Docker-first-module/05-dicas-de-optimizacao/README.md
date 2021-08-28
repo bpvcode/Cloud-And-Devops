@@ -8,7 +8,7 @@
   *  Exemplo:
         ```bash
         # CORRETO
-        FROM node:14.15-alpine3.12 - BEM
+        FROM node:14.15-alpine3.12
         ```
         ```bash
         # INCORRETO
