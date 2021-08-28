@@ -21,7 +21,7 @@ docker image ls
 * Resultado final:
 
 ```bash
-  REPOSITORY                                                                    TAG                                                                IMAGE ID       CREATED          SIZE
+REPOSITORY                                                                    TAG                                                                IMAGE ID       CREATED          SIZE
 bpvcode/app-go-example                                                        latest                                                             e26271529947   5 minutes ago    882MB
 bpvcode/app-go-example                                                        v1                                                                 e26271529947   5 minutes ago    882MB
 ```
@@ -48,7 +48,7 @@ docker image ls
 * Resultado final:
 
 ```bash
-  REPOSITORY                                                                    TAG                                                                IMAGE ID       CREATED          SIZE
+REPOSITORY                                                                    TAG                                                                IMAGE ID       CREATED          SIZE
 bpvcode/app-go-example                                                        latest                                                             3530524e1acf   12 minutes ago       5.6MB
 bpvcode/app-go-example                                                        v10                                                                3530524e1acf   12 minutes ago       5.6MB
 ```
