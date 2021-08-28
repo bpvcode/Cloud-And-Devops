@@ -2,9 +2,10 @@
 
 ## Multistage Build
 
-Bom para otimizar as imagens docker, principalmente se a aplicação for compilada.
+Bom para otimizar as imagens docker, principalmente se a aplicação for [compilada](./app-go-example).
+Objectivo é
 
-**[Mau Exemplo](app-go-example)**
+**[Mau Exemplo](./app-go-example/Dockerfile)**
 
 * Criar imagem a partir do Dockerfile:
 
@@ -31,7 +32,7 @@ bpvcode/app-go-example                                                        v1
 * Neste caso estamos a compilar e a executar no mesmo stage
 
 
-**[Bom Exemplo](a)**
+**[Bom Exemplo](./app-go-example/Dockerfile-good)**
 
 * Criar imagem a partir do Dockerfile:
 
@@ -55,6 +56,7 @@ bpvcode/app-go-example                                                        v1
 
 **NOTA: 5.6MB**  
 
-* Neste caso a imagem conta só a partir do ultimo stage, e a imagem do `alpine` é menos pesada do que a do `golang` e ja só temos o ficheiro executável neste workspace, para poder executar, e não todo o conteudo como no exemplo antigo;
+* Neste caso estamos a compilar no primeiro stage (primeiro `FROM`) e a executar no segundo stage (segundo `FROM`)
+  * Neste caso a imagem conta só a partir do ultimo stage, e a imagem do `alpine` é menos pesada do que a do `golang` e ja só temos o ficheiro executável neste workspace, para poder executar, e não todo o conteudo como no exemplo antigo;
 * No caso de **linguagens interpretadas**, é necessário que o ultimo stage tenha o código da aplicação para poder ser interpretado;
 * Contudo, no caso de **linguagens compiladas**, só precisamos de ter o ficheiro executável, e reduz em muito o tamanho da imagem final.
