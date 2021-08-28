@@ -2,6 +2,7 @@ FROM node
 
 WORKDIR app/src
 
+# VER EXPLICAÇÃO EM `../README.md` (## Criação de um Dockerfile - NOTAS)
 COPY package*.json ./
 
 RUN npm install
