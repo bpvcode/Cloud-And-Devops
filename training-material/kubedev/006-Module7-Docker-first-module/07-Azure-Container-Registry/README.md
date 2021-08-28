@@ -55,17 +55,17 @@ Portal Azure -> `Menu Button > All services > Container registries`
 
 Namespaces:
 
-[namespaces](./azure-containers-registry-1.png)
+![namespaces](./azure-containers-registry-1.png)
 
 
 Portal Azure -> `Menu Button > All services > Container registries > bpvcode > Repositories `
 
 Repositories:
 
-[repositories](./azure-containers-registry-2.png)
+![repositories](./azure-containers-registry-2.png)
 
 Portal Azure -> `Menu Button > All services > Container registries > bpvcode > Repositóries > app-example `
 
 Images and versions inside the repo:
 
-[images](./azure-containers-registry-3.png)
+![images](./azure-containers-registry-3.png)
