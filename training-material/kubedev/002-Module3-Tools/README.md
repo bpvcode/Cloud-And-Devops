@@ -5,16 +5,19 @@
 Install docker
 
 TODO:
-    * Describe installation process
+
+* Describe installation process
 
 **VS CODE**
 Install VS CODE
 
 TODO:
-    * Describe installation process
+
+* Describe installation process
 
 **Kubectl**
 Install kubectl
 
 TODO:
-    * Describe installation process
+
+* Describe installation process

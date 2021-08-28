@@ -111,4 +111,4 @@ bpvcode/api-conversao:latest
 
 NOTA:
 
-* ENTRYPOINT - Executa no start do container, e pode ser através de um ficheiro executável. Muito usado em conjunto com o CMD, pois o ENTRYPOINT executa o comando de inicialização, e o CMD serve para poder passar parâmetro opcionais para o ENTRYPOINT.
+* **ENTRYPOINT** - Executa no start do container, e pode ser através de um ficheiro executável. Muito usado em conjunto com o CMD, pois o ENTRYPOINT executa o comando de inicialização, e o CMD serve para poder passar parâmetros opcionais para o ENTRYPOINT.

@@ -62,8 +62,8 @@ docker container run -d -p 8080:80 nginx:latest
 ```
 
 Exemplo:
-    -p 8080:80
-    Linka o porto 80 do container, ao porto 8080 da máquina local
+
+    `-p 8080:80` -> Linka o porto 80 do container, ao porto 8080 da máquina local
     Podemos então aceder ao container através de `http://localhost:8080` e vamos ter acesso à pagina do nginx
 
 

@@ -3,4 +3,5 @@
 **Kubeadm installation and process**
 
 TODO:
-    * Describe process
+
+* Describe process

@@ -3,19 +3,23 @@
 **Azure CLI**
 
 TODO:
-    * Describe process
+
+* Describe process
 
 **Azure Kubernetes Service**
 
 TODO:
-    * Describe process
+
+* Describe process
 
 **Scaleway**
 
 TODO:
-    * Describe process
+
+* Describe process
 
 **Digital Ocean**
 
 TODO:
-    * Describe process
+
+* Describe process
