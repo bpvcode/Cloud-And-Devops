@@ -32,7 +32,7 @@ bpvcode/app-go-example                                                        v1
 * Neste caso estamos a compilar e a executar no mesmo stage
 
 
-**[Bom Exemplo](./app-go-example/Dockerfile-good)**
+**[Bom Exemplo](./app-go-example/Dockerfile-good)** - PATH : `cd ./app-go-example/Dockerfile-good`
 
 * Criar imagem a partir do Dockerfile:
 
