@@ -1,0 +1,20 @@
+FROM golang:1.16 as build
+
+WORKDIR /build
+
+COPY . .
+
+#Comando de build da aplicação go
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
+
+CMD ["./main.go"]
+
+#  New stagee
+FROM alpine:3.14
+
+WORKDIR /app
+
+# Copiar do Stage a cima "as build" na localização `build/main.go` ficheiro main, para este workdir em `/app`
+COPY --from=build /build/main.go .
+
+CMD ["go","run","main.go"]
