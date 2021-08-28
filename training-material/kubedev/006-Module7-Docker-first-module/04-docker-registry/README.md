@@ -53,6 +53,6 @@ Boa prática, fazer push da versão com `tag` e `latest`
 docker container run -d -p 8080:8080  bpvcode/api-conversao:v5
 ```
 
-**º - USE THE APPLICATION**
+**5º - USE THE APPLICATION**
 
-A aplicação estará a disponivel, a ser servida através do container e pode ser acedida localmente em `http://localhost:8080/api-docs` [Swagger](http://localhost:8080/api-docs).
+A aplicação está a disponivel, a ser servida através do container, e pode ser acedida localmente em `http://localhost:8080/api-docs`, ou, clique aqui -> [Swagger](http://localhost:8080/api-docs).
