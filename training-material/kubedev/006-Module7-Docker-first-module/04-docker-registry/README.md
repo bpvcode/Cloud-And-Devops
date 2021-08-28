@@ -1,6 +1,6 @@
 # Módulo 7 - Docker first module
 
-## Images - Docker Registry
+## Docker Registry
 
 Repositórios de imagens
 
@@ -14,18 +14,18 @@ Exemplo:
 
     * `bpvcode` - **namespace**
     * `app-name` - **repositório**
+    * `v1` - **version**
 
 
 NOTA:
 
-Para o seguinte workflow utilizei este [Dockerfile](../03-images-Dockerfile/api-conversão/Dockerfile) como base;
-
-Para correr o comando de build da imagem deverá ser no [path](../03-images-Dockerfile/api-conversão)  `../03-images-Dockerfile/api-conversão`.
+* Para o seguinte workflow utilizei este [Dockerfile](../03-images-Dockerfile/api-conversão/Dockerfile) como base;
+* Para correr o comando de build da imagem deverá ser no [path](../03-images-Dockerfile/api-conversão)  `../03-images-Dockerfile/api-conversão`.
 
 **1º - LOGIN**
 
 ```bash
-docker login
+docker login -u bpvcode
 ```
 
 **2º - BUILD IMAGE**
@@ -47,10 +47,12 @@ NOTA:
 
 Boa prática, fazer push da versão com `tag` e `latest`
 
-**4º - USE IMAGE FROM A REGISTRY TO RUN A CONTAINER**
+**4º - USE IMAGE FROM A REGISTRY TO RUN THE APLICATION IN A CONTAINER**
 
 ```bash
 docker container run -d -p 8080:8080  bpvcode/api-conversao:v5
 ```
 
-A aplicação estará a rodar através do container e pode ser acedida localmente em `http://localhost:8080`
+**º - USE THE APPLICATION**
+
+A aplicação estará a disponivel, a ser servida através do container e pode ser acedida localmente em `http://localhost:8080/api-docs` [Swagger](http://localhost:8080/api-docs).
