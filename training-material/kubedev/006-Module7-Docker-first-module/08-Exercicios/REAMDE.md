@@ -2,7 +2,7 @@
 
 ## Exercicios
 
-**1º Exercicio**
+**[1º Exercicio](../03-images-Dockerfile/api-conversão)**
 
 >1. Reproduza os passos que fiz nos vídeos explicativos, >seguindo as tarefas abaixo:
 >
@@ -10,12 +10,10 @@
 >
 >- Baixe o projeto api conversão no GitHub (https://>github.com/KubeDev/api-conversao) e crie uma imagem >docker seguindo as melhores práticas
 
-Feito no [directorio](../03-images-Dockerfile/api-conversão)
+NOTA: Necessário mudar de directório
 
-**[2º Exercicio](03-images-Dockerfile)**
+**[2º Exercicio MODULO](./02-ubuntu-curl-kubectl-vim-image)**
 
-**[3º Exercicio - EM FALTA!!](03-images-Dockerfile)**
+**[3º Exercicio MODULO - EM FALTA!!](./03-angular-template-image-multistage)**
 
-TODO:
-
-Angular application is not good. Fix app, then do exercise
+**[4º Exercicio EXTRA - EM FALTA!!](./03-angular-application-image-multistage)**
