@@ -8,7 +8,7 @@
 > Lembrando que é preciso ter o arquivo config na pasta .kube pra acessar o cluster Kubernetes
 
 
-**Explain [Dockerfile](Dockerfile)**
+**1º - Explain [Dockerfile](Dockerfile)**
 
 * Começamos com a imagem do `ubuntu` para utilizarmos um ambiente linux
 * Definimos o workspace
@@ -21,13 +21,13 @@
   * NOTA: colocamos root no path porque a imagem `ubuntu` roda em sudo por default. Se nao estiver em modo sudo, seri só `./.kube/config`
 
 
-**Build da imagem:**
+**2º - Build da imagem:**
 
 ```bash
 docker build -t bpvcode/ubuntu-kubectl-vim:v1 .
 ```
 
-**Run do container baseado na imagem:**
+**3º - Run do container baseado na imagem:**
 
 ```bash
 docker run -it -p 8080:80 bpvcode/ubuntu-kubectl-vim:v1 /bin/bash
@@ -42,7 +42,7 @@ Output:
 root@40ff559e566d:/#
 ```
 
-**Conclusão**
+**4º - Conclusão**
 
 Temos um container a correr, com o sistema operativo ubunto versão 20.4, com o curl, o vim e o kubectl instalado.
 
