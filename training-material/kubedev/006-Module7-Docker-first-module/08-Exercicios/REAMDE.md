@@ -14,6 +14,6 @@ NOTA: Necessário mudar de directório
 
 **[2º Exercicio MODULO](./02-ubuntu-curl-kubectl-vim-image)**
 
-**[3º Exercicio MODULO - EM FALTA!!](./03-angular-template-image-multistage)**
+**[3º Exercicio MODULO - EM FALTA!!](./03.1-angular-template-application-image-multistage/angular-template-application-image-multistage)**
 
 **[4º Exercicio EXTRA - EM FALTA!!](./03-angular-application-image-multistage)**
