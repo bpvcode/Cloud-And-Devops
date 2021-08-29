@@ -31,7 +31,7 @@ CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS
 
 **4º - App is running in [browser]("http://localhost:8080") - `http://localhost:8080`**
 
-# -------------------------- DEFAULT ANGULAR PROJECT INFO --------------------------
+# -------------------- DEFAULT ANGULAR PROJECT INFO --------------------
 
 ## AngularTemplateApplicationImageMultistage
 
