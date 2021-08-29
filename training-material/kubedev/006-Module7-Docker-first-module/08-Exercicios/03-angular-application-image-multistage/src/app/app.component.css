@@ -1,0 +1,75 @@
+.intro-content {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /*background: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.6));
+  background-size: 2px 2px;*/
+}
+.intro-content div.presentation {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /*top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;*/
+  width: 80%;
+  left: -7%;
+  height: 260px;
+}
+.intro-content div.presentation h1 {
+  margin: 15px 0;
+  font-size: 55px;
+  text-transform: uppercase;
+  color: black;
+  font-weight: bold;
+  text-shadow: -5px 0px 5px #101010;
+  margin: 0;
+}
+.intro-content div.presentation h2 {
+  margin: 10px 0 5px 0;
+  font-weight: 300;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: rgb(68, 66, 66);
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+@media (max-width: 640px) and (min-height: 361px) {
+  .intro-content div.presentation {
+    top: 40%;
+ }
+  .intro-content div.presentation h2 {
+    text-align: center;
+    margin-top: 60px;
+ }
+}
+.intro-content div.presentation h1 span.de-emphasize, .intro-content div.presentation h2 span.de-emphasize {
+  color: #828282;
+}
+.intro-content div.presentation h1 span:not(.de-emphasize), .intro-content div.presentation h2 span:not(.de-emphasize) {
+  display: none;
+}
+.intro-content div.presentation h1 span:not(.title), .intro-content div.presentation h2 span:not(.title) {
+  font-weight: bold;
+}
+.intro-content app-social-drawer {
+  position: relative;
+  bottom: 20px;
+}
+
+
+/**/
+
+.header{
+  display: flex;
+  padding: 10px;
+}
+
+.h2-header{
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+  display: flex;
+  padding: 5px;
+}
+

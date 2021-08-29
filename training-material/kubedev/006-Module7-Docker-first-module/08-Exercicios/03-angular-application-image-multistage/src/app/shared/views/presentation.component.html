@@ -1,0 +1,29 @@
+<!-- Presentation -->
+<div class="intro-content" id="id-intro-content">
+  <div class="presentation" id="div-presentation">
+    <h1 id= "h1-presentation" class="h1-presentation">
+      <span class="name">I'm &lt;span class="de-emphasize">Ricardo&lt;/span> Sousa.</span>
+    </h1>
+    <h2 *ngIf="showTechnologies" class="h2-presentation">
+      <span class="title">&lt;span class="de-emphasize">Software&lt;/span> Developer</span>
+      <span class="dot">&lt;span class="de-emphasize"> &sdot; &lt;/span></span>
+      <span class="jscript">Javascript &lt;span class="de-emphasize">/&lt;/span> Typescript</span>
+      <span class="style">LESS &lt;span class="de-emphasize">/&lt;/span> SCSS &lt;span class="de-emphasize">/&lt;/span>
+        CSS
+      </span>
+      <span class="framework">Angular &lt;span class="de-emphasize">/&lt;/span> React &lt;span class="de-emphasize">/&lt;/span>
+        Vue
+      </span>
+      <span class="markup">HTML &lt;span class="de-emphasize">/&lt;/span>
+        XML &lt;span class="de-emphasize">/&lt;/span>
+        YML &lt;span class="de-emphasize">/&lt;/span> Markdown
+      </span>
+      <span class="backend">
+        NodeJS &lt;span class="de-emphasize">/&lt;/span> PHP &lt;span class="de-emphasize">/&lt;/span> Java</span>
+      <span class="db">MySQL &lt;span class="de-emphasize">/&lt;/span> MongoDB</span>
+      <span class="devops">Shell script &lt;span class="de-emphasize">/&lt;/span> Docker</span>
+      <span class="obs">&lt;span class="de-emphasize">WEB&lt;/span> technologies passionate!</span>
+    </h2>
+  </div>
+  <app-social-drawer [items]="socialDrawerItems"></app-social-drawer>
+</div>
