@@ -8,16 +8,17 @@
 > Lembrando que é preciso ter o arquivo config na pasta .kube pra acessar o cluster Kubernetes
 
 
-Explain [Dockerfile](Dockerfile)
+**Explain [Dockerfile](Dockerfile)**
 
-* Começamos com a imagem do ubuntu para utilizarmos um ambiente linux
+* Começamos com a imagem do `ubuntu` para utilizarmos um ambiente linux
 * Definimos o workspace
 * Fazemos update dos packages
-* Instalamos o curl
+* Instalamos o `curl`
 * Baixamos o executável de instalação do `kubectl`
 * Instalamos o `kubectl`
-* Instalamos o vim
-* Copiamos o ficheiro de configuração da ligação ao cluster (Scaleway, Digital Ocean, ...) para o path `./root/.kube/config` - [Explicação](config)
+* Instalamos o `vim`
+* Copiamos o ficheiro de configuração da ligação ao cluster (Scaleway, Digital Ocean, ...) para o path `./root/.kube/config`
+  - [Explicação](config)
   * NOTA: colocamos root no path porque a imagem `ubuntu` roda em sudo por default. Se nao estiver em modo sudo, seri só `./.kube/config`
 
 
@@ -45,7 +46,9 @@ root@40ff559e566d:/#
 **Conclusão**
 
 Temos um container a correr, com o sistema operativo ubunto versão 20.4, com o curl, o vim e o kubectl instalado.
+
 Por fim, as configurações ao cluster são atualizadas pelo `.kube/config` file.
+
 Podemos, através deste cluster criar ficheiros de código com o vim e fazer deploy das nossas aplicações no kubernetes através das configurações do ficheiro `.kube/config`.
 
 ---
