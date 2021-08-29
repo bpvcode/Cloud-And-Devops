@@ -1,0 +1,30 @@
+##########################
+#### KUBE CONFIG FILE ####
+##########################
+
+Copy to this file the kube config file from your cloud provider (Or you can apply via secret environment variables in a CI/CD pipeline)
+
+Example:
+
+```yaml
+
+apiVersion: v1
+clusters:
+- name: "k8s-cluster"
+  cluster:
+    certificate-authority-data:
+    server:
+contexts:
+- name: admin@k8s-cluster
+  context:
+    cluster: "k8s-cluster"
+    user: k8s-cluster-admin
+current-context: admin@k8s-cluster
+kind: Config
+preferences: {}
+users:
+- name: k8s-cluster-admin
+  user:
+    token:
+
+```
