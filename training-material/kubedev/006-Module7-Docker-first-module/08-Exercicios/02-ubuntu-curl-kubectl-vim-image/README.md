@@ -17,8 +17,7 @@
 * Baixamos o executável de instalação do `kubectl`
 * Instalamos o `kubectl`
 * Instalamos o `vim`
-* Copiamos o ficheiro de configuração da ligação ao cluster (Scaleway, Digital Ocean, ...) para o path `./root/.kube/config`
-  - [Explicação](config)
+* Copiamos o [ficheiro de configuração](config) para o path `./root/.kube/config`
   * NOTA: colocamos root no path porque a imagem `ubuntu` roda em sudo por default. Se nao estiver em modo sudo, seri só `./.kube/config`
 
 
