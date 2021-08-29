@@ -6,7 +6,7 @@ Angular application is not good. Fix app, then do exercise
 
 
 
-# -------------------------- DEFAULT ANGULAR PROJECT INFO --------------------------
+# -------------------- DEFAULT ANGULAR PROJECT INFO --------------------
 # Template
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
