@@ -176,7 +176,7 @@ Isto porque o **Deployment object guarda os ReplicaSet objects para poder ter um
 kubectl rollout history deployment <deployment_Name>
 ```
 
-** Para fazer undo e mudar o replicaSet que está ativo para um anterior:**
+**Para fazer undo e mudar o replicaSet que está ativo para um anterior:**
 
 ```bash
 kubectl rollout undo deployment <deployment_Name>
