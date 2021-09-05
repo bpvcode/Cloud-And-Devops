@@ -6,10 +6,7 @@ This is my Cloud and Devops study material
 
 Hope you Like
 
-## Index
+## Content Table
 
-[Live study sessions](./live-study-sessions)
-
-
-[Training material](./training-material)
-
+* [Live study sessions](./live-study-sessions)
+* [Training material](./training-material)
