@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-api-app-golang
+spec:
+  selector:
+    matchLabels:
+      app: simple-api-app-golang
+  template:
+    metadata:
+      labels:
+        app: simple-api-app-golang
+    spec:
+      containers:
+      - name: simple-api-app-golang
+        image: bpvcode/exercises-simple-api-app-golang:v1
