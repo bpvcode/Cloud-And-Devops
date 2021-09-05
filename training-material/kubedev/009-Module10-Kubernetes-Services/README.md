@@ -8,7 +8,7 @@ Funcionam como o ponto unico onde os POD's são registados e sempre que alguem q
 
 ## Services types
 
-- [Cluster IP]()
+- [Cluster IP](./01-cluster-ip)
 - [NodePort]()
 - [LoadBalancer]()
 - [ExternalName]()
