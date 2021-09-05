@@ -1,0 +1,10 @@
+# Grupo da API a usar para criar o objecto - pode mudar de uma versão para a outra no kubernetes
+# `kubectl api-resources`
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podname
+spec:
+  containers:
+    - name: containername
+      image: bpvcode/stresss-test:v1
