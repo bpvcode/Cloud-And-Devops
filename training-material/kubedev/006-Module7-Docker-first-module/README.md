@@ -3,8 +3,8 @@
 ## Content Table
 
 * [Intro and commands](./01-intro-and-commands)
-* [Images - `docker commit`](./images-docker-commit)
-* [Images - Dockerfile](./03-images-Dockerfile)
+* [Images - `docker commit`](./02-images-docker-commit)
+* [Images - `Dockerfile`](./03-images-Dockerfile)
 * [Docker registry](./04-docker-registry)
 * [Dicas de optimização](./05-dicas-de-optimizacao)
 * [Multi stage build](./06-multistagebuild)
