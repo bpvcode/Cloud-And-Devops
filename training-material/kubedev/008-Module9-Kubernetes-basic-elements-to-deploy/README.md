@@ -19,12 +19,12 @@ NOTAS:
 
 Para criar um POD, criamos um ficheiro yaml (manifesto) com toda a especificação do objecto pod a criar no cluster kubernetes.
 
-[POD manifesto](./myfirstpod.yml)
-
 Correr este comando no directorio corrente para criar o objecto POD com o nome `podname`:
 
+[POD manifesto](./pod.yml)
+
 ```bash
-kubectl apply -f myfirstpod.yml
+kubectl apply -f pod.yml
 ```
 
 > NOTA:
@@ -52,6 +52,107 @@ kubectl port-forward pod/podname 8080:8080
 
 ## LABELS and SELECTORS
 
+**LABELS**
+
+Elementos `key:value` armazenados nos objectos do kubernetes, declarados na secção de `metadata`
+
+Muito utilizado para organizar objectos, exemplo de labels:
+
+- Tipo de aplicação
+- Autor da aplicação
+- Versão
+- ...
+
+Criar 2 pods distintos, com labels distintas:
+
+[POD1 manifesto](label-latest.yml)
+
+[POD2 manifesto](label-v1.yml)
+
+```bash
+kubectl apply -f ./label-latest.yml -f ./label-v1.yml
+
+# Then:
+kubectl port-forward pod/stress-test-pod-v1 9090:8080
+kubectl port-forward pod/stress-test-pod-latest 8080:8080
+```
+
+Se acessarmos a `localhost:9090` e `localhost:8080` vemos que "são duas máquinas distintas a responder".
+
+**SELECTORS**
+
+Forma de selecionar determinados objectos, mediante as LABELS que lhe foram atribuidas.
+
+Exemplo de utilização de SELECTORS:
+
+- REPLICASET para selecionar os pods;
+- SERVICES para saber quais os serviços que serão expostos;
+- ...
+
+> NOTA: Uso prático de SELECTORS nas próximas duas secções;
+
 ## REPLICASET
+
+Objecto que garante a quantidade de réplicas desejada e garante que o estado da aplicação está conforme o esperado.
+
+
+Criar um objecto do tipo RéplicaSet:
+
+```bash
+kubectl apply -f ./replicaset.yml
+```
+
+Ver pod replicaSet:
+
+```bash
+kubectl get pods
+```
+
+```bash
+kubectl describe pod <replicaset_pod_name>
+```
+
+Fazer port binding da máquina local com o container:
+
+```bash
+kubectl port-forward pod/<replicaset_pod_name> 8080:8080
+```
+
+Ver ReplicaSet object:
+
+```bash
+kubectl get replicaSet
+```
+
+```bash
+kubectl describe replicaSet <replicaset_name>
+```
+
+Fazer delete do pod:
+
+```bash
+kubectl delete pod/<replicaset_pod_name>
+```
+
+**Neste caso é sempre gerado um novo POD, porque o objecto ReplicaSet está encarregue de se certificar que a quantidade de réplicas e o estado da aplicação está conforme desejado e estipulado do manifesto [`replicaset.yml`](replicaset.yml)**
+
+Teste de escalabilidade:
+
+```bash
+kubectl scale replicaset <replicaSet_name> --replicas=10
+```
+
+Vamos pedir ao ReplicaSet object para aumentar o número de réplicas (10) e verificar que serão gerados mais pods.
+
+Neste caso, o ReplicaSet object vai tentar ter sempre 10 intâncias do pod em STATUS running.
+
+NOTAS FINAIS:
+
+- ReplicaSet object garante:
+  - Escalabilidade - pois permite ter várias réplicas do mesmo container a rodar e permite assim um downtime 0;
+  - Resiliência - pois tenta ter sempre o numero de réplicas e o estado da aplicação como o desejado e gere todo esse processo;
+
+- ReplicaSet object não gere a troca de versões de uma aplicação, ou seja, se mudarmos a imagem que estamos a usar no manifesto do replicaSet, não vai afetar os pods que já estão criados... esses pods são na mesma baseados na imagem antiga.
+Para que haja uma atualização, esses pods que ja estao baseados na imagem antiga, teem de ser apagados, e quando forem gerados novos pods, já serão baseado na imagem nova.
 
 ## DEPLOYMENT

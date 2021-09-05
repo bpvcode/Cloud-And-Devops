@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicaset-stress-test
+# Specifying the ReplicaSet object
+spec:
+  # Desired replicas to rune
+  replicas: 1
+  # Matching the objects that have same labels
+  selector:
+    matchLabels:
+      app: stresss-test-latest
+      versao: latest
+  # Specifying the POD to use in this ReplicaSet
+  template:
+    metadata:
+      labels:
+        app: stresss-test-latest
+        versao: latest
+    spec:
+      containers:
+        - name: stess-test-container-latest
+          image: bpvcode/stresss-test:v1
