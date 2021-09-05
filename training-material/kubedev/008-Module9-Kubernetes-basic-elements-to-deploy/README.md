@@ -93,6 +93,8 @@ Exemplo de utilização de SELECTORS:
 
 ## REPLICASET
 
+Responsável por gerenciar o objecto POD.
+
 Objecto que garante a quantidade de réplicas desejada e garante que o estado da aplicação está conforme o esperado.
 
 
@@ -156,3 +158,26 @@ NOTAS FINAIS:
 Para que haja uma atualização, esses pods que ja estao baseados na imagem antiga, teem de ser apagados, e quando forem gerados novos pods, já serão baseado na imagem nova.
 
 ## DEPLOYMENT
+
+Responsável por gerenciar o ReplicaSet object.
+
+[DEPLOYMENT manifesto](./deployment.yml)
+
+Este objecto gere o ReplicaSet de forma a conseguirmos ter o processo de troca entre pods quando existem alterações no manifesto.
+
+Garante por exemplo a gestão de versões, quando alterada a versão da imagem, de forma a que os PODS que ja estavam criados na versao antiga sejam reiniciados para a versão nova...
+
+Quando o deployment manifest é alterado, **é criado um novo ReplicaSet**, mas só um fica ativo (com os novos pods em execução).
+Isto porque o **Deployment object guarda os ReplicaSet objects para poder ter uma gestao das versões**, e assim garante tambem que **conseguimos fazer rollback para versões anteriores**
+
+**Para ver o histórico de versões:**
+
+```bash
+kubectl rollout history deployment <deployment_Name>
+```
+
+** Para fazer undo e mudar o replicaSet que está ativo para um anterior:**
+
+```bash
+kubectl rollout undo deployment <deployment_Name>
+```
