@@ -19,7 +19,7 @@ NOTAS:
 
 Para criar um POD, criamos um ficheiro yaml (manifesto) com toda a especificação do objecto pod a criar no cluster kubernetes.
 
-Correr este comando no directorio corrente para criar o objecto POD com o nome `podname`:
+**Correr este comando no directorio corrente para criar o objecto POD com o nome `podname`:**
 
 [POD manifesto](./pod.yml)
 
@@ -32,7 +32,7 @@ kubectl apply -f pod.yml
 > - Ver se imagem existe no docker hub, namespace `bpvcode` repositorio `stresss-test`, versão `v1`;
 > - Neste momento ainda nao conseguimos aceder à aplicação via browser;
 
-Correr este comando para fazer o bind do porto da máquina local, com o porto do POD:
+**Correr este comando para fazer o bind do porto da máquina local, com o porto do POD:**
 
 ```bash
 kubectl port-forward pod/podname 8080:8080
@@ -52,7 +52,7 @@ kubectl port-forward pod/podname 8080:8080
 
 ## LABELS and SELECTORS
 
-**LABELS**
+### LABELS
 
 Elementos `key:value` armazenados nos objectos do kubernetes, declarados na secção de `metadata`
 
@@ -63,7 +63,7 @@ Muito utilizado para organizar objectos, exemplo de labels:
 - Versão
 - ...
 
-Criar 2 pods distintos, com labels distintas:
+**Criar 2 pods distintos, com labels distintas:**
 
 [POD1 manifesto](label-latest.yml)
 
@@ -79,7 +79,7 @@ kubectl port-forward pod/stress-test-pod-latest 8080:8080
 
 Se acessarmos a `localhost:9090` e `localhost:8080` vemos que "são duas máquinas distintas a responder".
 
-**SELECTORS**
+### SELECTORS
 
 Forma de selecionar determinados objectos, mediante as LABELS que lhe foram atribuidas.
 
@@ -96,13 +96,13 @@ Exemplo de utilização de SELECTORS:
 Objecto que garante a quantidade de réplicas desejada e garante que o estado da aplicação está conforme o esperado.
 
 
-Criar um objecto do tipo RéplicaSet:
+**Criar um objecto do tipo RéplicaSet:**
 
 ```bash
 kubectl apply -f ./replicaset.yml
 ```
 
-Ver pod replicaSet:
+**Ver pod replicaSet:**
 
 ```bash
 kubectl get pods
@@ -112,13 +112,13 @@ kubectl get pods
 kubectl describe pod <replicaset_pod_name>
 ```
 
-Fazer port binding da máquina local com o container:
+**Fazer port binding da máquina local com o container:**
 
 ```bash
 kubectl port-forward pod/<replicaset_pod_name> 8080:8080
 ```
 
-Ver ReplicaSet object:
+**Ver ReplicaSet object:**
 
 ```bash
 kubectl get replicaSet
@@ -128,7 +128,7 @@ kubectl get replicaSet
 kubectl describe replicaSet <replicaset_name>
 ```
 
-Fazer delete do pod:
+**Fazer delete do pod:**
 
 ```bash
 kubectl delete pod/<replicaset_pod_name>
@@ -136,7 +136,7 @@ kubectl delete pod/<replicaset_pod_name>
 
 **Neste caso é sempre gerado um novo POD, porque o objecto ReplicaSet está encarregue de se certificar que a quantidade de réplicas e o estado da aplicação está conforme desejado e estipulado do manifesto [`replicaset.yml`](replicaset.yml)**
 
-Teste de escalabilidade:
+**Teste de escalabilidade:**
 
 ```bash
 kubectl scale replicaset <replicaSet_name> --replicas=10
