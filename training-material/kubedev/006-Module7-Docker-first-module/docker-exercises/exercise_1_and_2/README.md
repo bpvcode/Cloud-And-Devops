@@ -14,4 +14,4 @@
 - PostgreSQL ⇒ PgAdmin
 - Redis ⇒ redis-commander" - kubedev community exercises
 
-## ![Mongo](mongodb/README.md)
+## [Mongo](mongodb/README.md)

@@ -1,14 +1,14 @@
 # Mongo
 
-Exercise 2 using MongoDB Compass instead Mongo Express
+NOTE: Exercise 2 using MongoDB Compass instead Mongo Express
 
-Create a docker volume. Docker will manage a folder in host filesystem where to store the same data as the container
+1 - Create a docker volume. Docker will manage a folder in host filesystem where to store the same data as the container
 
 ```bash
 docker volume create mongo_vol
 ```
 
-Running a mongo instance in docker container and mount the directory `/data/db` inside container to the path managed by docker in host filesystem. Fin this path by run `docker inspect mongo_vol`.
+2 - Running a mongo instance in docker container and mount the directory `/data/db` inside container to the path managed by docker in host filesystem. Fin this path by run `docker inspect mongo_vol`
 
 ```bash
 docker run --name mongodb -d \
@@ -19,7 +19,7 @@ docker run --name mongodb -d \
     mongo:4.4.3
 ```
 
-Connect the container with MongoDB Compass
+3 - Connect the container with MongoDB Compass
 
 ![setup connection](mongo_compass.png)
 
@@ -28,7 +28,7 @@ Add random sample data to database
 ![test database](mongo_db_com.png)
 ![test database data](mongo_compass_2.png)
 
-Check that container has the same data as mongo compass. Find in `/data/db` path
+4 - Check that container has the same data as mongo compass. Find in `/data/db` path
 
 ```bash
 docker exec -it mongodb /bin/bash
@@ -36,17 +36,17 @@ docker exec -it mongodb /bin/bash
 
 **NOTE:**
 
-Remove docker container:
+5 - Remove docker container
 
 ```bash
 docker rm -f mongodb
 ```
 
-Refresh MongoDB Compass:
+6 - Refresh MongoDB Compass
 
 ![connection not found](mongo_compass3.png)
 
-Restart mongodb container with the same volume:
+7 - Restart mongodb container with the same volume
 
 ```bash
 docker run --name mongodb -d \
@@ -57,7 +57,7 @@ docker run --name mongodb -d \
     mongo:4.4.3
 ```
 
-Refresh MongoDB Compass - Check that we have the same data although the container has been deleted and restarted:
+8 - Refresh MongoDB Compass - Check that we have the same data although the container has been deleted and restarted
 
 ![restore data](mongo_compass_2.png)
 
