@@ -8,14 +8,14 @@ NOTE: Exercise 2 using Visual Studio Code SQLTools extension instead PgAdmin
 docker volume create postgres_vol
 ```
 
-2 - Running a postgres instance in docker container and mount the directory `/data/db` inside container to the path managed by docker in host filesystem. Fin this path by run `docker inspect postgres_vol`
+2 - Running a postgres instance in docker container and mount the directory `/var/lib/postgresql/data` inside container to the path managed by docker in host filesystem. Fin this path by run `docker inspect postgres_vol`
 
 ```bash
 docker run --name postgresdb -d \
     -e POSTGRES_USER="postgresuser" \
     -e POSTGRES_PASSWORD="postgrespwd" \
     -e POSTGRES_DB="test" \
-    -v postgres_vol:/data/db \
+    -v postgres_vol:/var/lib/postgresql/data \
     -p 5433:5432 \
     postgres:12.9
 ```
@@ -46,7 +46,7 @@ Add random data:
 
 ![setup connection1](/training-material/kubedev/006-Module7-Docker-first-module/docker-exercises/exercise_1_and_2/postgresql/postgres4.2.png)
 
-4 - Check that container has the same data as Visual Studio Code SQLTools extension. Find in `/data/db` path
+4 - Check that container has the same data as Visual Studio Code SQLTools extension. Find in `/var/lib/postgresql/data` path
 
 ```bash
 docker exec -it postgresdb /bin/bash
