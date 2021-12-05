@@ -30,8 +30,8 @@ docker run --name mongodb -d \
 ![setup connection](mongo_compass.png)
 
 ### Add random sample data to database
-
-![test database](mongo_compass_2.png)
+![test database](mongo_db_com.png)
+![test database data](mongo_compass_2.png)
 
 ### Check that container has the same data as mongo compass. Find in `/data/db` path
 
@@ -49,7 +49,7 @@ docker rm -f mongodb
 
 Refresh MongoDB Compass:
 
-![connection not found](mongo_compass_3.png)
+![connection not found](mongo_compass3.png)
 
 Restart mongodb container with the same volume:
 
