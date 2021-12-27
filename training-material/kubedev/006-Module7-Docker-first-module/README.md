@@ -12,3 +12,4 @@
 * [Exercicios](./08-Exercicios)
 * [Docker network](./09-docker-network)
 * [Docker volumes](./10-docker-volumes)
+* [Docker exercises](./docker-exercises)
