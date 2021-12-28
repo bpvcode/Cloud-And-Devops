@@ -1,6 +1,7 @@
 version: '3.8'
 
 volumes:
+  review_vol:
   movies_vol:
 
 networks:
@@ -48,10 +49,12 @@ services:
 ####################
 
   postgres_review_db:
-    image: postgres:9.3
+    image: postgres:14.1
     restart: always
     networks:
       - movie_web_app_net
+    volumes:
+      - review_vol:/var/lib/postgresql/data
     ports:
       - 5433:5432
     environment:
@@ -67,8 +70,10 @@ services:
     restart: always
     networks:
       - movie_web_app_net
+    volumes:
+      - review_vol:/var/lib/postgresql/data
     ports:
-      - 5000:5000
+      - 8080:80
     depends_on:
       - postgres_review_db
     environment:
@@ -88,7 +93,7 @@ services:
     networks:
       - movie_web_app_net
     ports:
-      - 8080:5000
+      - 5000:5000
     volumes:
       - movies_vol
     depends_on:
@@ -96,4 +101,4 @@ services:
       - movies
     environment:
       MOVIE_SERVICE_URI: http://movies:8181
-      REVIEW_SERVICE_URI: http://review:5000
+      REVIEW_SERVICE_URI: http://review:80
