@@ -1,3 +1,7 @@
+# Exercise 4
+
+4 - "Agora que você já afiou o seu conhecimento sobre criação de imagens Docker, tá na hora de fazer o deploy de uma aplicação 100% em containers Docker. A aplicação está no GitHub do KubeDev e um detalhe MUITO importante, a aplicação precisa ser toda criada com apenas uma linha de comando." - kubedev community exercises
+
 # Rotten-potatoes app
 
 NOTE: Need docker login first
@@ -14,13 +18,13 @@ Push image to personal docker hub repo:
 docker push bpvcode/potatoes-app:v1
 ```
 
-Run containers:
+**Run application:**
 
 ```bash
 docker-compose up -d
 ```
 
-Docker compose:
+Docker compose explain:
 
 - 1º Create volume and network
 - 2º Create mongo db container with volume

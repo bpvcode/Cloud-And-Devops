@@ -1,0 +1,99 @@
+version: '3.8'
+
+volumes:
+  movies_vol:
+
+networks:
+  movie_web_app_net:
+    driver: bridge
+
+services:
+
+####################
+## MOVIES SERVICE ##
+####################
+
+  movies:
+    image: bpvcode/webapp_movies:latest
+    build:
+      context: ./movies_service/src/.
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - movie_web_app_net
+    ports:
+      - 8181:8181
+    volumes:
+      - movies_vol
+    depends_on:
+      - mongo_movies_db
+    environment:
+      MONGODB_URI: mongodb://mongouser:mongopwd@mongo_movies_db:27017/admin
+
+  mongo_movies_db:
+    image: mongo:4.4.3
+    restart: always
+    ports:
+      - 27017:27017
+    networks:
+      - movie_web_app_net
+    volumes:
+      - movies_vol:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongouser
+      MONGO_INITDB_ROOT_PASSWORD: mongopwd
+
+####################
+## REVIEW SERVICE ##
+####################
+
+  postgres_review_db:
+    image: postgres:9.3
+    restart: always
+    networks:
+      - movie_web_app_net
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_USER=pguser
+      - POSTGRES_PASSWORD=Pg@123
+      - POSTGRES_DB=pguser
+
+  review:
+    image: bpvcode/webapp_review:latest
+    build:
+      context: ./review_service/src/Review.Web/.
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - movie_web_app_net
+    ports:
+      - 5000:5000
+    depends_on:
+      - postgres_review_db
+    environment:
+      ConnectionStrings__MyConnection: Host=postgres_review_db;Database=pguser;Username=pguser;Password=Pg@123;
+
+
+#############
+## WEB APP ##
+#############
+
+  web_app:
+    image: bpvcode/webapp:latest
+    build:
+      context: ./web_app/src/.
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - movie_web_app_net
+    ports:
+      - 8080:5000
+    volumes:
+      - movies_vol
+    depends_on:
+      - review
+      - movies
+    environment:
+      MOVIE_SERVICE_URI: http://movies:8181
+      REVIEW_SERVICE_URI: http://review:5000
