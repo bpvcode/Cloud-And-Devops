@@ -8,8 +8,8 @@ Então agora eu tenho aqui algumas aplicações que precisam ser executadas em c
 - Aplicação escrita em Python utilizando Flask - <https://github.com/KubeDev/conversao-distancia>
 - Aplicação escrita em C# utilizando ASP.NET Core - <https://github.com/KubeDev/conversao-peso> " - kubedev community exercises
 
-## [NODEJS APP](nodejs_app/conversao-temperatura)
+## [NODEJS APP](nodejs_app/conversao-temperatura/src)
 
 ## [PYTHON USING FLASK APP](python_flask_app/conversao-distancia)
 
-## [C# WITH ASP.NET Core APP - NOT WORKING](c#c#_asp.net_app/conversao-peso)
+## [C# WITH ASP.NET Core APP - NOT WORKING](c#_asp.net_app/conversao-peso)
