@@ -1,5 +1,7 @@
 # NODEJS APP - Conversão de Temperatura
 
+[Dockerfile added](Dockerfile)
+
 Build the image (Run this command in `/src` folder):
 
 ```bash
@@ -23,6 +25,8 @@ Enter the container:
 ```bash
 docker exec -it <container id> /bin/bash
 ```
+
+App:
 
 ![conversao temperatura app](./conversor-temperatura-app.png)
 

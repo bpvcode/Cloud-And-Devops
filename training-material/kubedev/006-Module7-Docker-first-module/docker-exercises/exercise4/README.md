@@ -6,6 +6,8 @@
 
 NOTE: Need docker login first
 
+[Dockerfile added](Dockerfile)
+
 Build image:
 
 ```bash

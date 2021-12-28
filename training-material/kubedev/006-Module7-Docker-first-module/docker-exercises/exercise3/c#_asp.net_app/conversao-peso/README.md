@@ -1,5 +1,7 @@
 # PYTHON USING FLASK APP - Conversão Peso
 
+[Dockerfile added](./ConversaoPeso.Web/Dockerfile)
+
 Build the image (Run this command in `/ConversaoPeso.Web` folder):
 
 ```bash
